@@ -1,10 +1,10 @@
 // Reverse words in a string
 
-window.reverseWordsSimple = (input) => {
+const reverseWordsSimple = (input) => {
   return ( input ).toString().split(' ').reverse().join(' ');
 };
 
-window.reverseWordsLoop = (input) => {
+const reverseWordsLoop = (input) => {
   let inputString = ( input ).toString();
   let inputLength = i = inputString.length;
   let output = '';
@@ -23,4 +23,6 @@ window.reverseWordsLoop = (input) => {
   return output;
 };
 
-
+function execute() {
+    console.log(this, reverseWordsSimple(' the is a string'));
+}

@@ -38,6 +38,8 @@ const swap = (arr, i, j) => {
   [arr[i], arr[j]] = [arr[j], arr[i]];
 }
 
+
+
 console.log(quickSort([4, 6, 3, 2, 9, 5], 0, 5));
 console.log(quickSort([4, 6, 3, 2, 2, 5], 0, 5));
 
