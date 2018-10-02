@@ -1,4 +1,7 @@
+// Repeating characters
+// 
 // Display how many times a character is repeating in a string
+// Input type: string
 // ex: 'aaaabb' => 'a4b2' (or input : aaabbbaaccccdd , output : a3b3a2c4d2)
 // '' => ''
 // 'a' => 'a1'
@@ -20,7 +23,8 @@ const repeatCount = (s) => {
   return res;
 }
 
-console.log(repeatCount('aaaabb')); // 'a4b2'
-console.log(repeatCount('aaabbbaaccccdd')); // a3b3a2c4d2
-console.log(repeatCount('a')); // a1
-console.log(repeatCount(' '));
+return execute = (string) => {
+  const result = repeatCount(string);
+  console.log(result);
+  return result;
+}

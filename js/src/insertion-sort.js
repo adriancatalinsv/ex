@@ -1,6 +1,12 @@
-
+// Insertion sort
+// 
 // Pass the array with i and move each element that is bigger than the one in position i
 // a position to the right. then position current i value into its sorted position in the sub-array (i -> 0)
+
+// Input type: Array
+// Input examples:
+// [4, 6, 3, 2, 9, 5]
+// [4, 6, 3, 2, 2, 5]
 
 const insertionSort = (arr) => {
 
@@ -22,5 +28,9 @@ const insertionSort = (arr) => {
   return arr;
 }
 
-console.log(insertionSort([4, 6, 3, 2, 9, 5]));
-console.log(insertionSort([4, 6, 3, 2, 2, 5]));
+return execute = (string) => {
+  const arr = JSON.parse(string);
+  const result = insertionSort(arr);
+  console.log(result);
+  return result;
+}
