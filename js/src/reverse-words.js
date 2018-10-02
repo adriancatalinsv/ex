@@ -11,18 +11,18 @@ const reverseWordsLoop = (input) => {
   let word = '';
 
   do {
-      let char = inputString[ inputLength - i ];
-      if ( char === ' ' || i === 0 ) {
-          output = word  + ' ' + output;
-          word = '';
-      } else {
-          word += char;
-      }
+    let char = inputString[ inputLength - i ];
+    if ( char === ' ' || i === 0 ) {
+        output = word  + ' ' + output;
+        word = '';
+    } else {
+        word += char;
+    }
   } while ( i -- );
 
   return output;
 };
 
-function execute() {
-    console.log(this, reverseWordsSimple(' the is a string'));
+return execute = () => {
+    console.log(reverseWordsSimple('ana are mere'));
 }

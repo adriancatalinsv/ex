@@ -23,6 +23,10 @@ const appendToDOM = (string, index) => {
   document.body.appendChild(button);
 }
 
+const runCode = (content) => {
+  return Function.call({}, content)();
+}
+
 const parseResponse = ( response, index ) => {
 
   let decoder = new TextDecoder();
@@ -33,7 +37,7 @@ const parseResponse = ( response, index ) => {
   // when a value has been received
   reader.read().then(function processResult( result ) {
     if (result.done) {
-      eval( finalResult );
+      let func = runCode(finalResult);
       functions.push( execute.bind( {} ) );
       appendToDOM( finalResult, functions.length - 1 );
       hljs.highlightBlock( document.querySelector( `.code-block-${index}` ) );
@@ -56,3 +60,4 @@ Promise.all( [
     parseResponse( response, index );
   } );
 });
+
