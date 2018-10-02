@@ -1,3 +1,5 @@
+// Best offers
+
 // A product is sold in a time frame. 1->n sellers are offered with a price.
 // Example:
 // - Seller 1 has an offer from 1pm to 6pm with a price of 20
@@ -9,6 +11,14 @@
 // - From 1pm to 2pm - price 20
 // - From 2pm to 5pm - price 15
 // - From 5pm to 6pm - price 20
+
+// Input type: Array<Object>
+// Sample input:
+// [{"seller": "st2","start": 700,"end": 1000,"value": 30}, 
+// {"seller": "st1","start": 500,"end": 800,"value": 20}]
+//   
+//[{"seller": "st2", "start": 100, "end": 600, "value": 20}, 
+//{"seller": "st1", "start": 200, "end": 500, "value": 15 }]   
 
 class BestOffers {
   
@@ -131,33 +141,18 @@ class BestOffers {
   }
 }
 
-return execute = () => {
+return execute = (string) => {
+  const input = JSON.parse(string);
+  
   let offers = new BestOffers();
-  offers.populate([{
-    seller: 'st2',
-    start: new Date('2018-09-25 07:00:00'),
-    end: new Date('2018-09-25 10:00:00'),
-    value: 30
-  }, {
-    seller: 'st1',
-    start: new Date('2018-09-25 05:00:00'),
-    end: new Date('2018-09-25 08:00:00'),
-    value: 20
-  }]);
+  offers.populate(input);
+    
   offers.showList();
-  offers.getBestOffers();
+  const res = offers.getBestOffers();
 
-  offers.populate([{
-    seller: 'st2',
-    start: new Date('2018-09-25 01:00:00'),
-    end: new Date('2018-09-25 06:00:00'),
-    value: 20
-  }, {
-    seller: 'st1',
-    start: new Date('2018-09-25 02:00:00'),
-    end: new Date('2018-09-25 05:00:00'),
-    value: 15
-  }]);
-  offers.showList();
-  offers.getBestOffers();
+  let str = '';
+  for(let i=0; i<res.length; i++) {
+    str += `Seller: ${res[i].seller} \n Start: ${res[i].start} \n End: ${res[i].end} \n Value: ${res[i].value}} \n\n`;
+  }
+  return str;
 }

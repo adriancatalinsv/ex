@@ -1,4 +1,13 @@
-// Input : { 1,2,3,4 } & target = 6 , OutPut : minimum length of the sub array with sum >= target 
+// Min sub-array length with sum higher than value
+// 
+// Input : { 1,2,3,4 } & target = 6 , 
+// OutPut : minimum length of the sub array with sum >= target 
+
+// Input type: JSON
+// Input examples:
+// {"arr": [1, 2, 3, 4], "val": 6}
+// {"arr": [7, 1, 2, 3, 4], "val": 6}
+// {"arr": [1, 2, 3, 2], "val": 6}
 
 const minSubArr = (arr, val) => {
 
@@ -31,6 +40,9 @@ const minSubArr = (arr, val) => {
   return min
 }
 
-console.log(minSubArr([1, 2, 3, 4], 6)); // 2
-console.log(minSubArr([7, 1, 2, 3, 4], 6)); // 1
-console.log(minSubArr([1, 2, 3, 2], 6)); // 3
+return execute = (string) => {
+  const obj = JSON.parse(string);
+  const result = minSubArr(obj.arr, obj.val);
+  console.log(result);
+  return result;
+}

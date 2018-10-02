@@ -1,4 +1,7 @@
+// Power of 10
+// 
 // Check if a number is power of 10 (i.e.: 1000 it is, 500 is not).
+// Input type: number
 
 const isPowerOfTen = (n) => {
   while(n > 9 && n % 10 === 0) {
@@ -14,10 +17,9 @@ const isPowerOfTenRec = (n) => {
   return n === 1;
 }
 
-console.log(isPowerOfTen(100));
-console.log(isPowerOfTen(1000));
-console.log(isPowerOfTen(1100));
-
-console.log(isPowerOfTenRec(100));
-console.log(isPowerOfTenRec(1000));
-console.log(isPowerOfTenRec(1100));
+return execute = (string) => {
+  const nbr = JSON.parse(string);
+  const result = isPowerOfTen(nbr);
+  console.log(result);
+  return result;
+}

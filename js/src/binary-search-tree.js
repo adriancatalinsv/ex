@@ -1,6 +1,11 @@
+// Binary Search Tree
 // Add
 // Find
 // preOrder, inOrder, postOrder 
+
+// Input type: JSON
+// Example input:
+// {"arr": [5, 5, 3, 3, 4, 4, 7, 7, 6, 6, 8, 8], "key": 4}
 
 class Node {
   constructor(key, val) {
@@ -12,8 +17,9 @@ class Node {
 }
 
 class BTree {
-  constructor(key, val) {
+  constructor(displayNode) {
     this.root = null;
+    this.displayNode = displayNode.bind(this);
   }
   
   addElement(root, newNode) {
@@ -42,10 +48,6 @@ class BTree {
     } else {
       this.addElement(this.root, newNode);
     }
-  }
-  
-  displayNode(node) {
-    console.log(node.key, node.val);
   }
   
   preOrder(root) {
@@ -85,27 +87,40 @@ class BTree {
   }
 }
 
-return execute = () => {
-  let btree = new BTree();
+return execute = (string) => {
+  const input = JSON.parse(string);
 
-  btree.add(5, 5);
-  btree.add(3, 3);
-  btree.add(4, 4);
-  btree.add(7, 7);
-  btree.add(6, 6);
-  btree.add(8, 8);
+  const displayNode = (node) => {
+    console.log(node.key, node.val);
+    result += `key: ${node.key}, val: ${node.val} \n`;
+  }
+  let btree = new BTree(displayNode);
 
-  console.log(btree.root);
+  const l = input.arr.length;
+  for(let i=0; i<l; i+=2) {
+    btree.add(input.arr[i], input.arr[i+1]);
+  }
 
-  btree.preOrder(btree.root);
-  console.log('');
-  btree.inOrder(btree.root);
-  console.log('');
-  btree.postOrder(btree.root);
+  let result = '';
 
-  console.log('');
-  console.log(btree.find(btree.root, 4));
-  console.log(btree.find(btree.root, 3));
-  console.log(btree.find(btree.root, 7));
-  console.log(btree.find(btree.root, 10));
+
+  result += 'preOrder \n';
+  btree.preOrder(btree.root, displayNode);
+  
+  result += 'inOrder \n';
+  btree.inOrder(btree.root, displayNode);
+  
+  result += 'postOrder \n';
+  btree.postOrder(btree.root, displayNode);
+
+  result += `find node with key ${input.key} \n`;
+  let node = btree.find(btree.root, input.key);
+
+  if (node === null) {
+    result += 'null';
+  } else {
+    displayNode(node);
+  }
+
+  return result;
 }

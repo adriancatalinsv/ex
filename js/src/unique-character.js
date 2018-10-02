@@ -1,4 +1,9 @@
-// find first unique character in a string
+// Find first unique character in a string
+// Input type: string
+// Input examples:
+// abcdbad
+// abcdbd
+// abcacdbd
 
 const uniqueCharacter = (s) => {
 
@@ -21,8 +26,8 @@ const uniqueCharacter = (s) => {
   return null;
 }
 
-return execute = () => {
-  console.log(uniqueCharacter('abcdbad'));
-  console.log(uniqueCharacter('abcdbd'));
-  console.log(uniqueCharacter('abcacdbd'));
+return execute = (string) => {
+  const result = uniqueCharacter(string);
+  console.log(result);
+  return result;
 }

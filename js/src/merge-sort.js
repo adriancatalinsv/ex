@@ -1,6 +1,13 @@
+// Merge sort
+// 
 // Split array in half, and continue spliting each half in half
 // until the resulting arrays have only one element
 // then merge backwards both halfs of each array 
+
+// Input type: Array
+// Input examples:
+// [4, 6, 3, 2, 9, 5]
+// [4, 6, 3, 2, 2, 5]
 
 const mergeSort = (arr) => {
 
@@ -36,5 +43,9 @@ const merge = (left, right) => {
   return res.concat(left.slice(l)).concat(right.slice(r));
 }
 
-console.log(mergeSort([4, 6, 3, 2, 9, 5]));
-console.log(mergeSort([4, 6, 3, 2, 2, 5]));
+return execute = (string) => {
+  const arr = JSON.parse(string);
+  const result = mergeSort(arr);
+  console.log(result);
+  return result;
+}

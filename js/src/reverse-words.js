@@ -1,4 +1,7 @@
 // Reverse words in a string
+// Input type: string
+// Example input: 
+// ana are mere
 
 const reverseWordsSimple = (input) => {
   return ( input ).toString().split(' ').reverse().join(' ');
@@ -23,6 +26,8 @@ const reverseWordsLoop = (input) => {
   return output;
 };
 
-return execute = () => {
-    console.log(reverseWordsSimple('ana are mere'));
+return execute = (string) => {
+  const result = reverseWordsLoop(string);
+  console.log(result);
+  return result;
 }
