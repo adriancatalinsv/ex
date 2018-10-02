@@ -1,0 +1,24 @@
+{
+  "name": "ex",
+  "version": "1.0.0",
+  "description": "Algorithms Ex Runner",
+  "main": "js/src/scripts.js",
+  "dependencies": {
+    "serve": "^10.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/serve/bin/serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adriancatalinsv/ex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adriancatalinsv/ex/issues"
+  },
+  "homepage": "https://github.com/adriancatalinsv/ex#readme"
+}
