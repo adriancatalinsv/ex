@@ -85,26 +85,27 @@ class BTree {
   }
 }
 
+return execute = () => {
+  let btree = new BTree();
 
-let btree = new BTree();
+  btree.add(5, 5);
+  btree.add(3, 3);
+  btree.add(4, 4);
+  btree.add(7, 7);
+  btree.add(6, 6);
+  btree.add(8, 8);
 
-btree.add(5, 5);
-btree.add(3, 3);
-btree.add(4, 4);
-btree.add(7, 7);
-btree.add(6, 6);
-btree.add(8, 8);
+  console.log(btree.root);
 
-console.log(btree.root);
+  btree.preOrder(btree.root);
+  console.log('');
+  btree.inOrder(btree.root);
+  console.log('');
+  btree.postOrder(btree.root);
 
-btree.preOrder(btree.root);
-console.log('');
-btree.inOrder(btree.root);
-console.log('');
-btree.postOrder(btree.root);
-
-console.log('');
-console.log(btree.find(btree.root, 4));
-console.log(btree.find(btree.root, 3));
-console.log(btree.find(btree.root, 7));
-console.log(btree.find(btree.root, 10));
+  console.log('');
+  console.log(btree.find(btree.root, 4));
+  console.log(btree.find(btree.root, 3));
+  console.log(btree.find(btree.root, 7));
+  console.log(btree.find(btree.root, 10));
+}

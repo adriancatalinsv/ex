@@ -131,31 +131,33 @@ class BestOffers {
   }
 }
 
-let offers = new BestOffers();
-offers.populate([{
-  seller: 'st2',
-  start: new Date('2018-09-25 07:00:00'),
-  end: new Date('2018-09-25 10:00:00'),
-  value: 30
-}, {
-  seller: 'st1',
-  start: new Date('2018-09-25 05:00:00'),
-  end: new Date('2018-09-25 08:00:00'),
-  value: 20
-}]);
-offers.showList();
-offers.getBestOffers();
+return execute = () => {
+  let offers = new BestOffers();
+  offers.populate([{
+    seller: 'st2',
+    start: new Date('2018-09-25 07:00:00'),
+    end: new Date('2018-09-25 10:00:00'),
+    value: 30
+  }, {
+    seller: 'st1',
+    start: new Date('2018-09-25 05:00:00'),
+    end: new Date('2018-09-25 08:00:00'),
+    value: 20
+  }]);
+  offers.showList();
+  offers.getBestOffers();
 
-offers.populate([{
-  seller: 'st2',
-  start: new Date('2018-09-25 01:00:00'),
-  end: new Date('2018-09-25 06:00:00'),
-  value: 20
-}, {
-  seller: 'st1',
-  start: new Date('2018-09-25 02:00:00'),
-  end: new Date('2018-09-25 05:00:00'),
-  value: 15
-}]);
-offers.showList();
-offers.getBestOffers();
+  offers.populate([{
+    seller: 'st2',
+    start: new Date('2018-09-25 01:00:00'),
+    end: new Date('2018-09-25 06:00:00'),
+    value: 20
+  }, {
+    seller: 'st1',
+    start: new Date('2018-09-25 02:00:00'),
+    end: new Date('2018-09-25 05:00:00'),
+    value: 15
+  }]);
+  offers.showList();
+  offers.getBestOffers();
+}

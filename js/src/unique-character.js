@@ -21,10 +21,8 @@ const uniqueCharacter = (s) => {
   return null;
 }
 
-function execute() {
-
+return execute = () => {
   console.log(uniqueCharacter('abcdbad'));
   console.log(uniqueCharacter('abcdbd'));
   console.log(uniqueCharacter('abcacdbd'));
-
 }
