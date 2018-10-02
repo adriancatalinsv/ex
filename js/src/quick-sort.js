@@ -1,9 +1,15 @@
-
+// Quick sort
+// 
 // Select a pivot - in this case the last element
 // Partition the array into 2, 
 // left from partitionIndex will be values smaller than pivot
 // right from partitionIndex will be values higher than pivot
 // do the same for the two smaller arrays
+
+// Input type: Array
+// Input examples:
+// [4, 6, 3, 2, 9, 5]
+// [4, 6, 3, 2, 2, 5]
 
 const quickSort = (arr, left, right) => {
   
@@ -39,7 +45,9 @@ const swap = (arr, i, j) => {
 }
 
 
-
-console.log(quickSort([4, 6, 3, 2, 9, 5], 0, 5));
-console.log(quickSort([4, 6, 3, 2, 2, 5], 0, 5));
-
+return execute = (string) => {
+  const arr = JSON.parse(string);
+  const result = quickSort(arr, 0, arr.length-1);
+  console.log(result);
+  return result;
+}

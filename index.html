@@ -2,10 +2,32 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./js/lib/highlight/railscasts.css">
+  <link rel="stylesheet" href="./css/styles.css">
   <script src="./js/lib/highlight/highlight.pack.js"></script>
   <title>EX runner</title>
 </head>
 <body>
+  <div class="root">
+    <div class="content"></div>
+    <div class="result">
+      <div class="input-section">
+        <div class="info">Please enter input values for selected problem using JavaScript syntax</div>
+        <div>
+          <textarea 
+            class="textarea" 
+            rows="10" 
+            cols="30"
+            placeholder="Input value(s)"></textarea>
+        </div>
+        <div class="response">
+          
+        </div>
+      </div>
+      <div class="clear-section">
+        <button class="clear">Clear</button>
+      </div>
+    </div>
+  </div>
   <script src="./js/src/scripts.js"></script>
 </body>
 </html>
