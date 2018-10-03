@@ -90,7 +90,8 @@ const parseResponse = ( response, index ) => {
     fetch('/js/src/best-offers.js'),
     fetch('/js/src/overlapping-rectangles.js'),
     fetch('/js/src/column-name-from-number.js'),
-    fetch('/js/src/sum-tree.js')
+    fetch('/js/src/sum-tree.js'),
+    fetch('/js/src/balanced-tree.js')
   ] )
   .then( ( responses ) => {
     responses.forEach( ( response, index ) => {
