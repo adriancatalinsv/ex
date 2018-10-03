@@ -87,7 +87,8 @@ const parseResponse = ( response, index ) => {
     fetch('/js/src/merge-sort.js'),
     fetch('/js/src/quick-sort.js'),
     fetch('/js/src/binary-search-tree.js'),
-    fetch('/js/src/best-offers.js')
+    fetch('/js/src/best-offers.js'),
+    fetch('/js/src/overlapping-rectangles.js'),
   ] )
   .then( ( responses ) => {
     responses.forEach( ( response, index ) => {
