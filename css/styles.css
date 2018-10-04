@@ -1,3 +1,6 @@
+body {
+  background-color: #dedede;
+}
 .root {
   display: flex;
   flex-direction: row;
@@ -7,6 +10,7 @@
   align-items: start;
   flex: 3;
   justify-content: left;
+  margin-right: 0.3rem;
   overflow: auto;
 }
 
@@ -28,10 +32,64 @@
 }
 
 .textarea {
+  border: 0;
+  background-color: #cecece;
   resize: none;
 }
 
 .clear-section {
   text-align: right;
   width: 100%;
+}
+
+/* navigation */
+
+.nav-opener {
+  cursor: pointer;
+  background: darkorange;
+  font-family: monospace;
+  padding: 0.5rem;
+  padding-left: 0;
+  margin: 0;
+}
+.nav-opener:hover {
+  background: orange;
+}
+.list-title {
+  font-weight: bold;
+  padding-left: 0.5rem;
+}
+
+.list {
+  background: darkorange;
+  display: none;
+  float: left;
+  list-style: none;
+  margin: 0;
+  margin-top: 0.5rem;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  text-decoration: none;
+  transition-duration: 0.5s;
+}
+
+.list-element {
+  color: #000000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.list-element:hover {
+  background-color: orange;
+}
+
+.nav-opener:hover > .list {
+  display: block;
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
 }
