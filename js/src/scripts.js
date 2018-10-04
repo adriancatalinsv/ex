@@ -2,6 +2,9 @@ const functions = [];
 const textarea = document.querySelector('.textarea');
 const response = document.querySelector('.response');
 const clearBtn = document.querySelector('.clear');
+const list = document.querySelector('.list');
+const contentDiv = document.querySelector('.content');
+let selectedIndex = 0;
 
 const getPreElement = (string) => {
   let pre = document.createElement('pre');
@@ -35,16 +38,40 @@ const appendToDOM = (string, index) => {
     executeProblem(index);
   });
 
-  pre.setAttribute('class', `code-block-${index}`);
+  pre.className = `code-block-${index}`;
 
-  const contentDiv = document.querySelector('.content');
+  let displayClass = index ? 'hidden' : ''
+  let container = document.createElement('div');
+  container.className = `container-${index} ${displayClass}`;
+  
+  container.appendChild(pre);
+  container.appendChild(button);
 
-  contentDiv.appendChild(pre);
-  contentDiv.appendChild(button);
+  contentDiv.appendChild(container);
 }
 
 const runCode = (content) => {
   return Function.call({}, content)();
+}
+
+const addMenuItem = (string, index) => {
+  const title = string.split('\n', 1)[0].replace('//', '');
+  let li = document.createElement('li');
+  li.className = 'list-element';
+  li.textContent = title;
+
+  li.addEventListener('click', () => {
+    if (selectedIndex !== index) {
+      const currentDiv = document.querySelector(`.container-${selectedIndex}`);
+      const selectedDiv = document.querySelector(`.container-${index}`);
+      
+      currentDiv.classList.add('hidden');
+      selectedDiv.classList.remove('hidden');
+      selectedIndex = index;
+    }
+  });
+
+  list.appendChild(li);
 }
 
 const parseResponse = ( response, index ) => {
@@ -59,6 +86,7 @@ const parseResponse = ( response, index ) => {
     if (result.done) {
       let func = runCode(finalResult);
       functions.push( execute.bind( {} ) );
+      addMenuItem(finalResult, functions.length - 1);
       appendToDOM( finalResult, functions.length - 1 );
       //hljs.highlightBlock( document.querySelector( `.code-block-${index}` ) );
       return;
@@ -91,7 +119,8 @@ const parseResponse = ( response, index ) => {
     fetch('/js/src/overlapping-rectangles.js'),
     fetch('/js/src/column-name-from-number.js'),
     fetch('/js/src/sum-tree.js'),
-    fetch('/js/src/balanced-tree.js')
+    fetch('/js/src/balanced-tree.js'),
+    fetch('/js/src/sort-stack.js')
   ] )
   .then( ( responses ) => {
     responses.forEach( ( response, index ) => {
