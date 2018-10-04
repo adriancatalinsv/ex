@@ -38,7 +38,7 @@ const appendToDOM = (string, index) => {
     executeProblem(index);
   });
 
-  pre.className = `code-block-${index}`;
+  pre.className = `code-block code-block-${index}`;
 
   let displayClass = index ? 'hidden' : ''
   let container = document.createElement('div');
@@ -129,7 +129,7 @@ const parseResponse = ( response, index ) => {
   });
 
   setTimeout(() => {
-    hljs.initHighlighting();
+    //hljs.initHighlighting();
   }, 3000);
 })();
 

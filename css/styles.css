@@ -25,6 +25,10 @@ body {
   padding: 1rem;
 }
 
+.code-block {
+  margin-top: 0;
+}
+
 .input-section {
   display: flex;
   flex-direction: column;
